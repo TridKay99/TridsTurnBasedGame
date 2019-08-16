@@ -1,0 +1,55 @@
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.healthContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.endTurnButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.p1health {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.p2health {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end
+}
+
+.WINNER {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+.MainFightingContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.player1Container {
+  height: 20%;
+  margin-left: 10%;
+}
+
+.player2Container {
+  height: 20%;
+  width: 90%;
+}
