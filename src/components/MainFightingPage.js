@@ -13,7 +13,8 @@ import './cssComponents/MainFightingPage.css'
 export default class MainFightingPage extends Component {
 
   state = {
-    turn: true,
+    turn: Math.random() >= 0.5,
+    turnCounter: 0,
     p1Health: 100,
     p1SpecialBar: 0,
     p2Health: 100,
@@ -22,11 +23,28 @@ export default class MainFightingPage extends Component {
     weakP2: false,
   }
 
+  //IMPORTANT
+  restartGame = () => {
+    this.setState({
+    turn: Math.random() >= 0.5,
+    turnCounter: 0,
+    p1Health: 100,
+    p1SpecialBar: 0,
+    p2Health: 100,
+    p2SpecialBar: 0,
+    weakP1: false,
+    weakP2: false,
+    })
+  }
+
   changeTurn = () => {
     if(this.state.turn === true) {
       this.setState({ turn: false })
     } else {
-      this.setState({ turn: true})
+      this.setState({ 
+        turn: true,
+        turnCounter: (this.state.turnCounter + 1)
+      })
     }
   }
 
@@ -89,6 +107,7 @@ export default class MainFightingPage extends Component {
       <div className="MainFightingContainer">
         <div className="title">
           <h1>Sexy Fighturds</h1>
+          <h2>Turn: {this.state.turnCounter}</h2>
         </div>
         <div className="healthContainer">
           <div className="p1health">
@@ -104,8 +123,9 @@ export default class MainFightingPage extends Component {
             <Player2SpecialBar p2SpecialBar={this.state.p2SpecialBar} />
           </div>
         </div>
-        <div className="endTurnButtonContainer">
+        <div className="endTurnRestartButtonContainer">
           <button className="endTurnButton" onClick={this.changeTurn}>END TURN</button>
+          <button className="restartButton" onClick={this.restartGame}>RESTART</button>
         </div>
         {this.state.turn === true ?
         <Player1 turn={this.state.turn}

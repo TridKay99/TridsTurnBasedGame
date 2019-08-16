@@ -1,6 +1,9 @@
 .title {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 1%;
 }
 
 .healthContainer {
@@ -8,9 +11,17 @@
   justify-content: space-evenly;
 }
 
-.endTurnButtonContainer {
+.endTurnRestartButtonContainer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+.endTurnRestartButtonContainer button {
+  padding: 2px;
+  width: 15%;
+  margin: 1px 0px;
 }
 
 .p1health {

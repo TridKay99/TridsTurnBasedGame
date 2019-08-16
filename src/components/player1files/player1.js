@@ -11,7 +11,7 @@ export default class player1 extends Component {
       move1: "Sexy Kick",
       // will weaken other players attacks
       move2: "Say Hi",
-      specialMove: "Full Dead"
+      specialMove: "Stagger Damage"
     },
     attackOpen: false,
     healOpen: false
@@ -38,7 +38,7 @@ export default class player1 extends Component {
   }
 
   render() {
-    console.log("p1specialBar", this.props.p1SpecialBar)
+
     return (
       <React.Fragment>
         <div className="player1Container">

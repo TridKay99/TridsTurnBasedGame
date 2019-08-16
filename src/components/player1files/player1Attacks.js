@@ -4,7 +4,6 @@ import { Popup } from 'semantic-ui-react'
 class player1Attacks extends React.Component {
 
   render() {
-console.log("p1specialBar", this.props.p1SpecialBar)
     return (
       <div className="attackMoves">
         <Popup
@@ -18,7 +17,7 @@ console.log("p1specialBar", this.props.p1SpecialBar)
         {this.props.p1SpecialBar === 100 ? 
         <Popup
               trigger={<button onClick={this.props.p1SpecialAttack}>{this.props.p1moves.specialMove}</button>}
-              content='kills EVERYTHING!'
+              content='40 damage over 5 turns!'
               hideOnScroll /> :
               null
         }
