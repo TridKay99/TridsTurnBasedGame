@@ -39,6 +39,9 @@ export default class player1 extends Component {
 
   render() {
 
+    const { attackEnemy, P1attack2WEAK, p1SpecialBar, p1SpecialAttack, heal1 } = this.props
+    const { p1moves } = this.state
+
     return (
       <React.Fragment>
         <div className="player1Container">
@@ -47,15 +50,15 @@ export default class player1 extends Component {
             <button onClick={this.attackMovesOpen}>Fight</button>
             <button onClick={this.healMovesOpen}>Heal</button>
             {this.state.attackOpen ? 
-            <Player1Attacks p1moves={this.state.p1moves} 
-                            attackEnemy={this.props.attackEnemy}
-                            P1attack2WEAK={this.props.P1attack2WEAK}
-                            p1SpecialBar={this.props.p1SpecialBar}
-                            p1SpecialAttack={this.props.p1SpecialAttack}
+            <Player1Attacks p1moves={p1moves} 
+                            attackEnemy={attackEnemy}
+                            P1attack2WEAK={P1attack2WEAK}
+                            p1SpecialBar={p1SpecialBar}
+                            p1SpecialAttack={p1SpecialAttack}
                             /> : 
                             null }
             {this.state.healOpen ?
-            <Player1Heals   heal1={this.props.heal1}/> :
+            <Player1Heals   heal1={heal1}/> :
             null
             }
           </div>
